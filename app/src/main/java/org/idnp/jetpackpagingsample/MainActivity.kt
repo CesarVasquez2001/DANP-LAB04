@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.idnp.jetpackpagingsample.adapters.UserAdapter
-import org.idnp.jetpackpagingsample.paging.UserViewModel
+import org.idnp.jetpackpagingsample.paging.CountrieViewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val viewModel by viewModels<UserViewModel>()
+        val viewModel by viewModels<CountrieViewModel>()
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         val pagingAdapter = UserAdapter()
 

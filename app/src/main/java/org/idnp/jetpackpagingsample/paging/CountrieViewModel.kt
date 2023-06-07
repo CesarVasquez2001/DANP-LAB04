@@ -17,7 +17,7 @@ class CountrieViewModel : ViewModel() {
 
         val pager = Pager(
             PagingConfig(
-                pageSize = 5,
+                pageSize = 20,
                 enablePlaceholders = false,
                 prefetchDistance = 3)
         ) {

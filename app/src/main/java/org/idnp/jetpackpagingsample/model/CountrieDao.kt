@@ -6,15 +6,21 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import org.idnp.jetpackpagingsample.entities.Countrie
-
+ import kotlinx.coroutines.flow.Flow
 @Dao
 interface CountrieDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(users: List<Countrie>)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertCountrie(noteEntity: Countrie)
+
     @Query("SELECT * FROM countries")
-    fun pagingSource(query: String): PagingSource<Int, Countrie>
+    fun pagingSource(): PagingSource<Int, Countrie>
+
+    @Query("SELECT * FROM countries")
+    fun getAll(): Flow<List<Countrie>>
 
     @Query("DELETE FROM countries")
     suspend fun clearAll()
-}
+ }

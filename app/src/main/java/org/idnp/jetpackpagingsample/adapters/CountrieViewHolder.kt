@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import org.idnp.jetpackpagingsample.R
 import org.idnp.jetpackpagingsample.entities.Countrie
 
-class CountrieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+class CountrieViewHolder(view: View) : RecyclerView. ViewHolder(view) {
 
     private val cuiText = view.findViewById<TextView>(R.id.textViewCui) as TextView
     private val firstNameText = view.findViewById<TextView>(R.id.textViewFirstName) as TextView
@@ -14,9 +14,9 @@ class CountrieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(user: Countrie) {
         with(user) {
-            cuiText.text = cui.toString()
-            firstNameText.text = firstName.toString()
-            secondNameText.text = lastName.toString()
+            cuiText.text = countrieId.toString()
+            firstNameText.text = name_en.toString()
+            secondNameText.text = name_es.toString()
         }
     }
 }

@@ -35,7 +35,7 @@ class UserAdapter : PagingDataAdapter<Countrie, CountrieViewHolder>(DiffUtilCall
 
 class DiffUtilCallBack : DiffUtil.ItemCallback<Countrie>() {
     override fun areItemsTheSame(oldItem: Countrie, newItem: Countrie): Boolean {
-        return oldItem.cui == newItem.cui
+        return oldItem.countrieId == newItem.countrieId
     }
 
     override fun areContentsTheSame(oldItem: Countrie, newItem: Countrie): Boolean {

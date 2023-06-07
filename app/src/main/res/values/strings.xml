@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">JetpackPagingSample</string>
+    <string name="title_activity_main2">MainActivity2</string>
 </resources>

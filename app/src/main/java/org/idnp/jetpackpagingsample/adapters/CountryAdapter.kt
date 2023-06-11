@@ -5,21 +5,21 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import org.idnp.jetpackpagingsample.R
-import org.idnp.jetpackpagingsample.entities.Countrie
+import org.idnp.jetpackpagingsample.entities.Country
 
 //class UserAdapter(diffCallback: DiffUtil.ItemCallback<User>) :
-class UserAdapter : PagingDataAdapter<Countrie, CountrieViewHolder>(DiffUtilCallBack()) {
+class UserAdapter : PagingDataAdapter<Country, CountryViewHolder>(DiffUtilCallBack()) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): CountrieViewHolder {
+    ): CountryViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.row_user, parent, false)
-        return CountrieViewHolder(view)
+        return CountryViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: CountrieViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CountryViewHolder, position: Int) {
 //        getItem(position)?.let { holder.bind(it) }
 //        val item = getItem(position)
 //        holder.bind(item)
@@ -33,12 +33,12 @@ class UserAdapter : PagingDataAdapter<Countrie, CountrieViewHolder>(DiffUtilCall
 
 }
 
-class DiffUtilCallBack : DiffUtil.ItemCallback<Countrie>() {
-    override fun areItemsTheSame(oldItem: Countrie, newItem: Countrie): Boolean {
+class DiffUtilCallBack : DiffUtil.ItemCallback<Country>() {
+    override fun areItemsTheSame(oldItem: Country, newItem: Country): Boolean {
         return oldItem.countrieId == newItem.countrieId
     }
 
-    override fun areContentsTheSame(oldItem: Countrie, newItem: Countrie): Boolean {
+    override fun areContentsTheSame(oldItem: Country, newItem: Country): Boolean {
         return oldItem == newItem
     }
 }
